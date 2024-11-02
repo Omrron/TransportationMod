@@ -9,10 +9,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class moditem {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(TransportationMod.MODID);
 
-    public static final DeferredItem<Item> BISMUTH = ITEMS.register("corrupted bow",
+    public static final DeferredItem<Item> BISMUTH = ITEMS.register("corrupted_bow",
             () -> new Item(new Item.Properties()));
-
-
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
