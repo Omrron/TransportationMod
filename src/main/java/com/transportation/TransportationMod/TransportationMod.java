@@ -115,8 +115,8 @@ public class TransportationMod
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
             event.accept(EXAMPLE_BLOCK_ITEM);
 
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(moditem.BISMUTH);
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(moditem.corrupted_bow);
         }
     }
 
