@@ -6,6 +6,9 @@ bin
 .classpath
 .project
 
+#datagen
+src/generated
+
 # idea
 out
 *.ipr
