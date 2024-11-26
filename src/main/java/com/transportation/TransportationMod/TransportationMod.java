@@ -83,6 +83,7 @@ public class TransportationMod
 
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.CORRUPTION_BLOCK);
+            event.accept(ModBlocks.SPREADING_CORRUPTION_BLOCK);
         }
     }
 

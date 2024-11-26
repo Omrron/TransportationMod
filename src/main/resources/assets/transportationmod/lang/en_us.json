@@ -1,3 +1,4 @@
 {
-  "block.transportationmod.corruption_block": "Corruption"
+  "block.transportationmod.corruption_block": "Corruption",
+  "block.transportationmod.spreading_corruption_block": "Spreading Corruption"
 }

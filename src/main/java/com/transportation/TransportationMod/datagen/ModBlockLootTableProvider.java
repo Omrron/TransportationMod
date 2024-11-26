@@ -28,11 +28,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.CORRUPTION_BLOCK.get());
+        dropSelf(ModBlocks.SPREADING_CORRUPTION_BLOCK.get());
     }
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return ModBlocks.Blocks.getEntries().stream().map(Holder::value)::iterator;
+        return ModBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block block, Item item, float min, float max) {

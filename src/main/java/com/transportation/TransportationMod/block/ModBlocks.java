@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
 
-    public static final DeferredRegister.Blocks Blocks = DeferredRegister.createBlocks(TransportationMod.MODID);
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(TransportationMod.MODID);
 
     public static final DeferredBlock<Block> CORRUPTION_BLOCK = registerBlock("corruption_block",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -24,9 +24,18 @@ public class ModBlocks {
                     .sound(SoundType.SCULK)
                     ));
 
+    public static final DeferredBlock<Block> SPREADING_CORRUPTION_BLOCK = registerBlock("spreading_corruption_block",
+            () -> new SpreadingCorruptionBlock(BlockBehaviour.Properties.of()
+                    .strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .randomTicks()
+                    .sound(SoundType.SCULK_CATALYST)
+            ));
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
-        DeferredBlock<T> toReturn = Blocks.register(name, block);
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
+
         return toReturn;
     }
 
@@ -35,6 +44,6 @@ public class ModBlocks {
     }
 
     public static void register(IEventBus eventBus) {
-        Blocks.register(eventBus);
+        BLOCKS.register(eventBus);
     }
 }

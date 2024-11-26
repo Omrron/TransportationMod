@@ -21,6 +21,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
-                .add(ModBlocks.CORRUPTION_BLOCK.get());
+                .add(ModBlocks.CORRUPTION_BLOCK.get())
+                .add(ModBlocks.SPREADING_CORRUPTION_BLOCK.get());
     }
 }
