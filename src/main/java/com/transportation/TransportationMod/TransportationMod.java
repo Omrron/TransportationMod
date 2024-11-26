@@ -2,6 +2,7 @@ package com.transportation.TransportationMod;
 
 import com.transportation.TransportationMod.block.ModBlocks;
 import com.transportation.TransportationMod.item.moditem;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -42,7 +43,7 @@ public class TransportationMod
     public TransportationMod(IEventBus modEventBus, ModContainer modContainer)
     {
         // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
+//        modEventBus.addListener(TransportationMod::onClientTick);
 
         CREATIVE_MODE_TABS.register(modEventBus);
 
@@ -59,19 +60,6 @@ public class TransportationMod
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-    }
-
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
-        // Some common setup code
-        LOGGER.info("HELLO FROM COMMON SETUP");
-
-        if (Config.logDirtBlock)
-            LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
-
-        LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
-
-        Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
     }
 
     // Add the example block item to the building blocks tab
